@@ -1,13 +1,18 @@
+import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
-import 'modules/login/login_screen.dart';
+import 'package:form_udemycourse/shared/bloc_observer.dart';
 import 'layout/home_layout.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  Bloc.observer = MyBlocObserver();
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData.light(),
       home: HomeLayout(),
       debugShowCheckedModeBanner: false,
     );
